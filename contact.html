@@ -21,7 +21,6 @@
   <main>
     <!-- University and Group Contact Info -->
     <section class="contact-section">
-
       <div class="contact-block">
         <h3>University Contact</h3>
         <p>Sri Lanka Institute of Information Technology (SLIIT)</p>
@@ -41,24 +40,45 @@
     <!-- Contact Form -->
     <section class="form-section">
       <h3>Send Us a Message</h3>
-      <form id="contactForm" action="https://formsubmit.co/sriwanthij@gmail.com" method="POST">
+      <form id="contactForm">
         <input type="email" name="email" placeholder="Your Email" required><br>
         <textarea name="message" placeholder="Message" required></textarea><br>
         <button type="submit">Send</button>
-
-        <!-- Optional hidden inputs -->
-        <input type="hidden" name="_captcha" value="false">
       </form>
     </section>
   </main>
 
   <footer>© 2025 RESAI Research Group</footer>
 
-  <!-- JavaScript for Alert -->
+  <!-- JavaScript for AJAX Form Submission -->
   <script>
     document.getElementById('contactForm').addEventListener('submit', function(event) {
-      alert("Thank you! A confirmation email has been sent to your inbox.");
-      alert("Message sent successfully!");
+      event.preventDefault(); // Stop default form submission
+
+      const form = event.target;
+      const formData = new FormData(form);
+
+      // Add FormSubmit-specific fields
+      formData.append('_captcha', 'false');
+      formData.append('_template', 'table');
+
+      fetch('https://formsubmit.co/ajax/sriwanthij@gmail.com', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          alert("Thank you! A confirmation email has been sent to your inbox.");
+          alert("Message sent successfully!");
+          form.reset();
+        } else {
+          alert("There was a problem sending your message. Please try again.");
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert("Failed to send message. Please check your internet connection.");
+      });
     });
   </script>
 
