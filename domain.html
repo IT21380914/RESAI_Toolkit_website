@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html><head><title>Domain</title><link rel='stylesheet' href='style.css'></head>
+<body>
+<header><h1>RESAI Toolkit</h1><nav><a href='index.html'>Home</a> <a href='domain.html'>Domain</a> <a href='milestones.html'>Milestones</a> <a href='documents.html'>Documents</a> <a href='slides.html'>Slides</a> <a href='about.html'>About Us</a> <a href='contact.html'>Contact Us</a></nav></header>
+<main>
+
+<section>
+  <center>
+  <h1>Domain</h1>
+  </center>
+  <h2>📚 Literature Survey </h2>
+  <p>
+    AI systems across text, image, audio, and video domains exhibit gender bias that is often amplified by contextual cues—such as sentence structure, object co-occurrence, or background environments. Traditional bias detection tools tend to focus on static features or model performance but overlook these deeper, multimodal patterns.
+  </p>
+
+  <h3>📝 Text-Based Systems</h3>
+  <p>
+    Early tools like WEAT, MAC, and PMI quantified bias in static embeddings (e.g., Word2Vec, GloVe) but couldn’t capture contextual shifts. Even advanced models like BERT exhibit residual gender bias. Tools like WEFE attempt to unify metrics but lack sentence-level sensitivity. The <strong>Context-Aware Bias Metric (CABM)</strong> integrates cosine similarity, PMI, and BERT embedding shifts with PCA and SHAP for interpretable, context-sensitive analysis.
+  </p>
+
+  <h3>🖼️ Image-Based Systems</h3>
+  <p>
+    Studies like Gender Shades revealed major demographic disparities in facial recognition systems. Tools like REVISE assess gender-object co-occurrence but ignore spatial depth and semantics. Grad-CAM and Score-CAM visualize model attention but don’t quantify bias. The <strong>Unified Bias Metric (UBM)</strong> addresses these gaps by combining object influence scores (OIS) and scene semantics (SSB) using CLIP and Places365, enhanced with SHAP and regression modeling.
+  </p>
+
+  <h3>🔊 Audio-Based Systems</h3>
+  <p>
+    Bias in audio systems is typically assessed post-hoc using metrics like EER and minDCF, which fail to identify dataset-level imbalances. Metrics like G2mindiff offer comparative insights but are model-dependent. The <strong>Audio Bias Score</strong> analyzes raw audio features (pitch, energy, ZCR) using statistical models to detect demographic skew before model training begins.
+  </p>
+
+  <h3>🎥 Video-Based Systems</h3>
+  <p>
+    Video models are influenced by spatiotemporal context—such as scene background and movement. Prior work showed gendered assumptions linked to scenes (e.g., kitchens, sports fields). However, few tools quantify this. The <strong>Composite Gender Bias Score (CGBS)</strong> combines embedding disparity, saliency-based attention, and representation imbalance to evaluate fairness across action recognition datasets.
+  </p>
+
+  <h3>📌 Summary</h3>
+  <p>
+    Most traditional fairness tools fail to address how <em>contextual relationships</em> drive gender bias across modalities. The RESAI Toolkit fills this gap through four domain-specific, explainable metrics—CABM, UBM, Audio Bias Score, and CGBS—designed to detect nuanced and contextual gender bias, enabling a shift toward <strong>multimodal, pre-model fairness analysis</strong>.
+  </p>
+</section>
+
+
+  <section>
+    <center><h2> Research Problem</h2></center>
+    <p>
+      AI bias is not just embedded in the subjects themselves, but also in their context. Current tools fail to quantify how gender associations emerge from scene layout, linguistic syntax, or acoustic patterns. The core problem: How can we create robust, interpretable, and context-aware metrics that detect gender bias across all modalities?
+    </p>
+  </section>
+
+<section>
+  <center><h2>RESEARCH OBJECTIVES</h2></center>
+
+  <div class="objective-card">
+    <img src="assets/images/cabm.png" alt="CABM">
+    <p><strong>Text (CABM):</strong> Integrates cosine similarity, PMI, and BERT embedding shifts with PCA and SHAP to detect bias in sentence-level context.</p>
+  </div>
+
+  <div class="objective-card">
+    <img src="assets/images/ubm.png" alt="UBM">
+    <p><strong>Image (UBM):</strong> Combines Object Influence Score and Scene Similarity Bias using CLIP and Places365 embeddings; enhanced with SHAP and regression models.</p>
+  </div>
+
+  <div class="objective-card">
+    <img src="assets/images/abs.png" alt="Audio Bias Score">
+    <p><strong>Audio:</strong> Builds a statistical metric using raw features like pitch, energy, ZCR to identify gender imbalance before training.</p>
+  </div>
+
+  <div class="objective-card">
+    <img src="assets/images/cgbs.png" alt="CGBS">
+    <p><strong>Video:</strong> Merges feature embedding distances, saliency shifts, and gender representation ratios into a composite score for action-recognition fairness.</p>
+  </div>
+
+  <div class="objective-card">
+    <img src="assets/images/audit.png" alt="Dataset Audits">
+    <p>Enable pre-model dataset audits with domain-specific, explainable tools for long-term fairness monitoring.</p>
+  </div>
+</section>
+
+
+<section>
+  <center><h2>METHODOLOGY</h2></center>
+  <p>
+    To detect gender bias across multiple modalities—text, image, audio, and video—the RESAI Toolkit introduces a suite of specialized, interpretable metrics. Each metric is tailored to the modality's unique characteristics but aligns under a unified framework.
+  </p>
+
+  <div class="method-row">
+    <img src="assets/images/textdata.png" alt="CABM Icon">
+    <div>
+      <ul>
+        <li><strong>Goal:</strong> Detect sentence-level gender bias in BERT-based embeddings.</li>
+        <li><strong>Method:</strong> Combines cosine similarity, PMI, and contextual shifts.</li>
+        <li><strong>Tools:</strong> PCA, SHAP, and Random Forest.</li>
+        <li><strong>Dataset:</strong> WinoBias.</li>
+        <li><strong>Output:</strong> Bias score per occupation (male, female, or neutral).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="method-row">
+    <img src="assets/images/iamgedata.png" alt="UBM Icon">
+    <div>
+      <ul>
+        <li><strong>Goal:</strong> Quantify visual gender bias from object and scene context.</li>
+        <li><strong>Method:</strong> Uses object influence and scene similarity with CLIP & Places365.</li>
+        <li><strong>Tools:</strong> YOLOv8, SAM, SHAP, XGBoost.</li>
+        <li><strong>Output:</strong> Heatmaps and interpretable scores revealing visual bias.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="method-row">
+    <img src="assets/images/audiodata.png" alt="Audio Icon">
+    <div>
+      <ul>
+        <li><strong>Goal:</strong> Assess raw feature-based gender bias in voice data before training.</li>
+        <li><strong>Features:</strong> Pitch, energy, amplitude, ZCR, voice activity.</li>
+        <li><strong>Approach:</strong> Symbolic & polynomial regression across genders.</li>
+        <li><strong>Validation:</strong> Controlled data augmentation.</li>
+        <li><strong>Output:</strong> Scaled score indicating male or female bias (e.g., +0.75 = 75% male-biased).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="method-row">
+    <img src="assets/images/videodata.png" alt="Video Icon">
+    <div>
+      <ul>
+        <li><strong>Goal:</strong> Detect bias in action recognition due to scene and framing.</li>
+        <li><strong>Components:</strong> Embedding disparity, salience bias, representation ratio.</li>
+        <li><strong>Approach:</strong> Combines all into a composite score.</li>
+        <li><strong>Output:</strong> Action-level fairness indicators and visual disparity analysis.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="method-row">
+    <img src="assets/images/valandexp.png" alt="Validation Icon">
+    <div>
+      <ul>
+        <li><strong>Statistical Tests:</strong> Mann-Whitney U, Shapiro-Wilk.</li>
+        <li><strong>Explainability:</strong> SHAP, PCA, KDE plots.</li>
+        <li><strong>Modular Design:</strong> Extendable to biases like race, age, and models like RoBERTa, GPT.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section>
+ <center> <h2>TECHNOLOGIES USED</h2></center>
+
+  <div class="tech-card">
+   <center> <h3> Languages & Libraries</h3></center>
+<div class="tech-icons">
+  <div class="tech-item">
+    <img src="assets/images/python.png" alt="Python">
+    <span>Python</span>
+  </div>
+  <div class="tech-item">
+    <img src="assets/images/sckit.png" alt="Scikit-learn">
+    <span>Scikit-learn</span>
+  </div>
+  <div class="tech-item">
+    <img src="assets/images/shap.png" alt="SHAP">
+    <span>SHAP</span>
+  </div>
+  <div class="tech-item">
+    <img src="assets/images/xgboost.png" alt="XGBoost">
+    <span>XGBoost</span>
+  </div>
+  <div class="tech-item">
+    <img src="assets/images/pandas.png" alt="Pandas">
+    <span>Pandas</span>
+  </div>
+  <div class="tech-item">
+    <img src="assets/images/matplotlib.png" alt="Matplotlib">
+    <span>Matplotlib</span>
+  </div>
+</div>
+
+  </div>
+
+
+  <div class="tech-card">
+    <center><h3>Frameworks</h3></center>
+<div class="tech-icons">
+  <div class="tech-item">
+    <img src="assets/images/huggingface.png" alt="Hugging Face">
+    <span>Hugging Face</span>
+  </div>
+  <div class="tech-item">
+    <img src="assets/images/colab.png" alt="Google Colab">
+    <span>Google Colab</span>
+  </div>
+</div>
+
+  </div>
+
+  <div class="tech-card">
+    <center><h3>Datasets</h3></center>
+    <div class="tech-icons">
+    <div class="tech-item">
+    <img src="assets\images\text.png" alt="WinoBias">
+    <span>WinoBias</span>
+    </div>
+    <div class="tech-item">
+    <img src="assets\images\audio1.png" alt="LibriSpeech">
+    <span>LibriSpeech</span>
+    </div>
+    <div class="tech-item">
+    <img src="assets\images\audio2.png" alt="TED-LIUM">
+    <span>TED-LIUM</span>
+    </div>
+    <div class="tech-item">
+    <img src="assets\images\audio3.png" alt="AMI">
+    <span>AMI</span>
+    </div>
+    <div class="tech-item">
+    <img src="assets\images\audio4.png" alt="Common Voice">
+    <span>Common Voice</span>
+    </div>
+    <div class="tech-item">
+    <img src="assets\images\image.png" alt="COCO">
+    <span>COCO</span>
+    </div>
+  </div>
+  </div>
+
+    <div class="tech-card">
+    <center><h3>Models</h3></center>
+    <div class="tech-icons">
+          <div class="tech-item">
+    <img src="assets\images\model1.png" alt="BERT">
+    <span>BERT</span>
+    </div>
+        <div class="tech-item">
+    <img src="assets\images\model2.png" alt="CLIP">
+    <span>CLIP</span>
+    </div>
+        <div class="tech-item">
+    <img src="assets\images\model3.png" alt="YOLOv8">
+    <span>YOLOv8</span>
+    </div>
+        <div class="tech-item">
+    <img src="assets\images\model4.png" alt="SAM">
+    <span>SAM</span>
+    </div>
+    </div>
+  </div>
+
+</section>
+
+</main>
+
+<footer>© 2025 RESAI Research Group</footer>
+</body>
+</html>

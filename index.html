@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>RESAI Toolkit - Home</title>
+<link rel='stylesheet' href='style.css'>
+</head>
+<body>
+<header><h1>RESAI Toolkit</h1><nav><a href='index.html'>Home</a> <a href='domain.html'>Domain</a> <a href='milestones.html'>Milestones</a> <a href='documents.html'>Documents</a> <a href='slides.html'>Slides</a> <a href='about.html'>About Us</a> <a href='contact.html'>Contact Us</a></nav></header>
+<main>
+<section>
+<center><h2>Welcome to RESAI Toolkit</h2></center>
+<p>As Artificial Intelligence (AI) systems increasingly influence critical domains such as healthcare, employment, and media the risk of encoding and amplifying gender bias has become a pressing concern. Traditional fairness metrics often fall short in detecting nuanced, context-dependent biases, particularly across diverse modalities like text, image, audio, and video. This research introduces the RESAI Toolkit, a unified, interpretable framework designed to quantify and analyze contextual gender bias across these four data modalities.</p>
+<p>For the text modality, the Context-Aware Bias Metric (CABM) is proposed, integrating cosine similarity, Pointwise Mutual Information (PMI), and sentence-level embedding shifts to assess bias in transformer-based models like BERT. In the image modality, the Unified Bias Metric (UBM) combines object-level features (e.g., size, distance, depth) with scene-level semantics using CLIP embeddings and Places365, yielding explainable bias scores supported by SHAP and regression models. The audio modality metric evaluates gender bias by analyzing raw acoustic features such as pitch, amplitude, signal energy, zero-crossing rate (ZCR), voice activity, and the standard deviations of energy, pitch, and amplitude, with symbolic and polynomial regression techniques used to generate interpretable bias scores from feature patterns. In the video modality, a multi-dimensional score captures bias through salience-based framing, feature embedding disparity, and representation imbalance across action classes.</p>
+<p>Each metric was tested across curated datasets using advanced statistical validation (e.g., Mann-Whitney U, correlation analysis, Shapiro-Wilk test) and machine learning interpretability techniques (e.g., SHAP, PCA, Random Forest, regression modeling). Results reveal that gender bias is contextually driven and manifests uniquely across modalities. The RESAI Toolkit offers a modular, extensible, and reproducible pipeline for detecting and interpreting multimodal bias paving the way for fairer, more accountable AI systems.</p>
+<img class="indximg" src='assets/images/index.png' alt='Placeholder image'>
+</section>
+</main>
+<footer>© 2025 RESAI Research Group</footer>
+</body>
+</html>
