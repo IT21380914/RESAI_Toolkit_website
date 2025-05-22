@@ -1,50 +1,57 @@
 <!DOCTYPE html>
 <html><head><title>Domain</title><link rel='stylesheet' href='style.css'></head>
 <body>
-<header><h1>RESAI Toolkit</h1><nav><a href='index.html'>Home</a> <a href='domain.html'>Domain</a> <a href='milestones.html'>Milestones</a> <a href='documents.html'>Documents</a> <a href='slides.html'>Slides</a> <a href='about.html'>About Us</a> <a href='contact.html'>Contact Us</a></nav></header>
+<header>
+  <h1>RESAI Toolkit</h1>
+  <nav>
+    <a href='index.html'>Home</a> 
+    <a href='domain.html' class="active">Domain</a> 
+    <a href='milestones.html'>Milestones</a> 
+    <a href='documents.html' >Documents</a> 
+    <a href='about.html'>About Us</a> 
+    <a href='contact.html'>Contact Us</a>
+  </nav>
+</header>
 <main>
 
 <section>
-  <center>
-  <h1>Domain</h1>
-  </center>
-  <h2>📚 Literature Survey </h2>
+  <center><h2> LITERATURE SURVEY</h2></center>
+  <div class="tech-card">
   <p>
     AI systems across text, image, audio, and video domains exhibit gender bias that is often amplified by contextual cues—such as sentence structure, object co-occurrence, or background environments. Traditional bias detection tools tend to focus on static features or model performance but overlook these deeper, multimodal patterns.
   </p>
 
-  <h3>📝 Text-Based Systems</h3>
   <p>
-    Early tools like WEAT, MAC, and PMI quantified bias in static embeddings (e.g., Word2Vec, GloVe) but couldn’t capture contextual shifts. Even advanced models like BERT exhibit residual gender bias. Tools like WEFE attempt to unify metrics but lack sentence-level sensitivity. The <strong>Context-Aware Bias Metric (CABM)</strong> integrates cosine similarity, PMI, and BERT embedding shifts with PCA and SHAP for interpretable, context-sensitive analysis.
+    In <strong>text-based systems</strong>, early tools like WEAT, MAC, and PMI quantified bias in static embeddings (e.g., Word2Vec, GloVe) but couldn’t capture contextual shifts. Even advanced models like BERT exhibit residual gender bias. Tools like WEFE attempt to unify metrics but lack sentence-level sensitivity. The <strong>Context-Aware Bias Metric (CABM)</strong> integrates cosine similarity, PMI, and BERT embedding shifts with PCA and SHAP for interpretable, context-sensitive analysis.
   </p>
 
-  <h3>🖼️ Image-Based Systems</h3>
   <p>
-    Studies like Gender Shades revealed major demographic disparities in facial recognition systems. Tools like REVISE assess gender-object co-occurrence but ignore spatial depth and semantics. Grad-CAM and Score-CAM visualize model attention but don’t quantify bias. The <strong>Unified Bias Metric (UBM)</strong> addresses these gaps by combining object influence scores (OIS) and scene semantics (SSB) using CLIP and Places365, enhanced with SHAP and regression modeling.
+    For <strong>image-based systems</strong>, studies like Gender Shades revealed major demographic disparities in facial recognition systems. Tools like REVISE assess gender-object co-occurrence but ignore spatial depth and semantics. Grad-CAM and Score-CAM visualize model attention but don’t quantify bias. The <strong>Unified Bias Metric (UBM)</strong> addresses these gaps by combining object influence scores (OIS) and scene semantics (SSB) using CLIP and Places365, enhanced with SHAP and regression modeling.
   </p>
 
-  <h3>🔊 Audio-Based Systems</h3>
   <p>
-    Bias in audio systems is typically assessed post-hoc using metrics like EER and minDCF, which fail to identify dataset-level imbalances. Metrics like G2mindiff offer comparative insights but are model-dependent. The <strong>Audio Bias Score</strong> analyzes raw audio features (pitch, energy, ZCR) using statistical models to detect demographic skew before model training begins.
+    In <strong>audio-based systems</strong>, bias is typically assessed post-hoc using metrics like EER and minDCF, which fail to identify dataset-level imbalances. Metrics like G2mindiff offer comparative insights but are model-dependent. The <strong>Audio Bias Score (ABS)</strong> analyzes raw audio features (pitch, energy, ZCR) using statistical models to detect demographic skew before model training begins.
   </p>
 
-  <h3>🎥 Video-Based Systems</h3>
   <p>
-    Video models are influenced by spatiotemporal context—such as scene background and movement. Prior work showed gendered assumptions linked to scenes (e.g., kitchens, sports fields). However, few tools quantify this. The <strong>Composite Gender Bias Score (CGBS)</strong> combines embedding disparity, saliency-based attention, and representation imbalance to evaluate fairness across action recognition datasets.
+    For <strong>video-based systems</strong>, models are influenced by spatiotemporal context—such as scene background and movement. Prior work showed gendered assumptions linked to scenes (e.g., kitchens, sports fields). However, few tools quantify this. The <strong>Composite Gender Bias Score (CGBS)</strong> combines embedding disparity, saliency-based attention, and representation imbalance to evaluate fairness across action recognition datasets.
   </p>
 
-  <h3>📌 Summary</h3>
   <p>
     Most traditional fairness tools fail to address how <em>contextual relationships</em> drive gender bias across modalities. The RESAI Toolkit fills this gap through four domain-specific, explainable metrics—CABM, UBM, Audio Bias Score, and CGBS—designed to detect nuanced and contextual gender bias, enabling a shift toward <strong>multimodal, pre-model fairness analysis</strong>.
   </p>
+</div>
 </section>
 
 
+
   <section>
-    <center><h2> Research Problem</h2></center>
+    <center><h2> RESEARCH PROBLEM</h2></center>
+    <div class="tech-card">
     <p>
       AI bias is not just embedded in the subjects themselves, but also in their context. Current tools fail to quantify how gender associations emerge from scene layout, linguistic syntax, or acoustic patterns. The core problem: How can we create robust, interpretable, and context-aware metrics that detect gender bias across all modalities?
     </p>
+    </div>
   </section>
 
 <section>

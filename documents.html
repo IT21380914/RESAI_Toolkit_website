@@ -2,41 +2,125 @@
 <html>
 <head>
   <title>Documents</title>
-  <link rel='stylesheet' href='style.css'>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>RESAI Toolkit</h1>
     <nav>
-      <a href='index.html'>Home</a>
-      <a href='domain.html'>Domain</a>
-      <a href='milestones.html'>Milestones</a>
-      <a href='documents.html'>Documents</a>
-      <a href='slides.html'>Slides</a>
-      <a href='about.html'>About Us</a>
-      <a href='contact.html'>Contact Us</a>
+      <a href="index.html">Home</a>
+      <a href="domain.html">Domain</a>
+      <a href="milestones.html">Milestones</a>
+      <a href="documents.html" class="active">Documents</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
     </nav>
   </header>
 
   <main>
-    <h1>Documents</h1>
-    <ul>
-      <li><a href='assets/docs/project_charter.pdf'>Project Charter</a></li>
-      <li><a href='assets/docs/24-25J-195-updated.pdf'>Proposal Document</a></li>
-    </ul>
+    <section>
+      <center><h2>PROJECT CHARTER</h2></center>
+      <div class="tech-card">
+      <p>A formal document that defines the project and gives the project manager the authority to begin work.</p>
+      <a href="assets/docs/project_charter.pdf" class="download-btn" download>Download Project Charter</a>
+      </div>
+    </section>
 
-    <h2>Checklist Documents</h2>
-    <ul>
-      <li><a href='assets\docs\24_25J_195_Data_Analysis_Report.docx'>Checklist Document 1: Data Analysis Report</a></li>
-      <li><a href='assets\docs\24_25J_195_MasterSheetOfResearchPapersStudied.xlsx'>Checklist Document 2: Master sheet of research papers studied</a></li>
-      <li><a href='assets\docs\24_25J_195_Ethical_Analysis_Report.docx'>Checklist Document 3: Ethical Analysis Report</a></li>
-      <li><a href='assets\docs\24_25J_195_MLOps_Report.docx'>Checklist Document 4: MLOps Report </a></li>
-    </ul>
+    <section>
+      <center><h2>PROPOSAL DOCUMENT</h2></center>
+      <div class="tech-card">
+      <p>The detailed proposal for the RESAI Toolkit including objectives, methodology, and timeline.</p>
+      <a href="assets/docs/24-25J-195-updated.pdf" class="download-btn" download>Download Proposal Document</a>
+      </div>
+    </section>
 
-    <h2>Final Report</h2>
-    <ul>
-      <li><a href='assets/docs/final_document.pdf'>Final Document</a></li>
-    </ul>
+    <section>
+      <center><h2>CHECKLIST DOCUMENTS</h2></center>
+
+      <div class="doc-box">
+        <div class="tech-card">
+        <h3>Data Analysis Report</h3>
+                <p>Analysis of the dataset used in the RESAI project.</p>
+        <a href="assets/docs/24_25J_195_Data_Analysis_Report.docx" class="download-btn" download>Download Data Analysis Report</a>
+        </div>
+      </div>
+
+      <div class="doc-box">
+        <div class="tech-card">
+        <h3>Master Sheet of Research Papers Studied</h3>
+        <p>A summary of the research papers analyzed during the project.</p>
+        <a href="assets/docs/24_25J_195_MasterSheetOfResearchPapersStudied.xlsx" class="download-btn" download>Download Master Sheet</a>
+        </div>
+      </div>
+
+      <div class="doc-box">
+        <div class="tech-card">
+        <h3>Ethical Analysis Report</h3>
+        <p>Assessment of the ethical implications of the RESAI Toolkit.</p>
+        <a href="assets/docs/24_25J_195_Ethical_Analysis_Report.docx" class="download-btn" download>Download Ethical Report</a>
+        </div>
+      </div>
+
+      <div class="doc-box">
+        <div class="tech-card">
+        <h3>MLOps Report</h3>
+        <p>Overview of the MLOps approach and implementation in the project.</p>
+        <a href="assets/docs/24_25J_195_MLOps_Report.docx" class="download-btn" download>Download MLOps Report</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Final Report</h2>
+      <div class="tech-card">
+      <p>The comprehensive final document compiling all findings and deliverables.</p>
+      <a href="assets/docs/final_document.pdf" class="download-btn" download>Download Final Document</a>
+      </div>
+    </section>
+
+    <section>
+      <center><h2>RESERACH PAPERS</h2></center>
+
+      <div class="doc-box">
+        <div class="tech-card">
+        <h3>Contextual Bias Score : A Quantitative Metric for Gender Bias Detection in Visual Datasets</h3>
+        <p>This paper quantify gender bias in images by analyzing the influence of surrounding objects and scene contexts on gender representation. Using object detectors (YOLOv8), segmentation models (SAM), and the CLIP model with Places365, the study generates interpretable bias heatmaps. SHAP and XGBoost are used to provide feature importance and bias scoring, highlighting which visual elements reinforce stereotypical gender roles.</p>
+        <a href="assets/docs/research_paper_member1.pdf" class="download-btn" download>Download the paper</a>
+        </div>
+      </div>
+
+      <div class="doc-box">
+        <div class="tech-card">
+        <h3>Audio Bias Score: Bias Detection Metric for Gender Bias Detection in Audio Datasets</h3>
+        <p>This paper propose a modality-specific bias metric for audio by analyzing raw voice features (pitch, energy, amplitude, ZCR, etc.) before any training occurs. It would use symbolic and polynomial regression to detect consistent feature differences across genders. The paper would also validate bias scores through controlled data augmentation, resulting in a scaled score (e.g., +0.75 indicating 75% male bias). This work addresses bias intrinsic to the dataset, independent of model behavior.</p>
+        <a href="assets/docs/research_paper_member2.pdf" class="download-btn" download> Download the paper</a>
+      </div>
+      </div>
+
+      <div class="doc-box">
+        <div class="tech-card">
+        <h3>Text Modality </h3>
+        <p>This paper present a method for detecting gender bias in pre-trained language models (like BERT) at the sentence level. It would explore how gendered terms influence sentence embeddings using cosine similarity, Pointwise Mutual Information (PMI), and contextual shifts. The analysis uses the WinoBias dataset, with tools such as PCA, SHAP, and Random Forest to interpret the bias and provide a bias score per occupation. The study would also discuss how such bias affects downstream NLP tasks.</p>
+        <a href="assets/docs/research_paper_member3.pdf" class="download-btn" download>Download the paper</a>
+      </div>
+      </div>
+
+      <div class="doc-box">
+        <div class="tech-card">
+        <h3>Video Modality</h3>
+        <p>This study focus on gender bias in video-based human action recognition datasets. It would introduce a composite bias score built from three dimensions: embedding disparities between genders, visual salience bias (which part of the video draws focus), and representation imbalance across classes. The paper would include visualizations and action-level fairness indicators to interpret how framing and dataset composition reinforce gender bias.</p>
+        <a href="assets/docs/research_paper_member4.pdf" class="download-btn" download>Download the paper</a>
+      </div>
+      </div>
+
+      <div class="doc-box">
+        <div class="tech-card">
+        <h3>RESAI TOOOLKIT:Unified Framework for Multimodal Gender Bias Detection</h3>
+        <p>This paper presents a comprehensive framework integrating gender bias detection across multiple data modalities—text, image, audio, and video. It consolidates individual modality-specific metrics into a unified toolkit (the RESAI Toolkit) to provide interpretable, explainable bias scores. The study emphasizes the importance of addressing bias at the dataset level, independent of downstream models, and validates the approach through statistical tests and explainability methods. The group paper also discusses the modular design that allows easy extension to other types of biases and evolving AI models, demonstrating the framework’s scalability and practical relevance for fair AI research.</p>
+        <a href="assets/docs/group_research_paper.pdf" class="download-btn" download> Download the paper</a>
+      </div>
+      </div>
+    </section>
   </main>
 
   <footer>© 2025 RESAI Research Group</footer>

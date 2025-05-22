@@ -1,8 +1,66 @@
 <!DOCTYPE html>
-<html><head><title>Contact Us</title><link rel='stylesheet' href='style.css'></head>
+<html>
+<head>
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    <header><h1>RESAI Toolkit</h1><nav><a href='index.html'>Home</a> <a href='domain.html'>Domain</a> <a href='milestones.html'>Milestones</a> <a href='documents.html'>Documents</a> <a href='slides.html'>Slides</a> <a href='about.html'>About Us</a> <a href='contact.html'>Contact Us</a></nav></header>
-    <h1>Contact Us</h1><p>Email: resaigroup@example.com<br>Phone: +94 712345678</p><form><input type='email' placeholder='Your Email'><br><textarea placeholder='Message'></textarea><br><button type='submit'>Send</button></form>
-<footer>© 2025 RESAI Research Group</footer>
+
+  <header>
+    <h1>RESAI Toolkit</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="domain.html">Domain</a>
+      <a href="milestones.html">Milestones</a>
+      <a href="documents.html">Documents</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html" class="active">Contact Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- University and Group Contact Info -->
+    <section class="contact-section">
+
+      <div class="contact-block">
+        <h3>University Contact</h3>
+        <p>Sri Lanka Institute of Information Technology (SLIIT)</p>
+        <p>New Kandy Rd, Malabe 10115, Sri Lanka</p>
+        <p>Email: info@sliit.lk</p>
+        <p>Phone: +94 112 410 500</p>
+      </div>
+    </section>
+
+    <!-- Google Map -->
+    <section class="map-section">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.7435443748143!2d79.97040191477328!3d6.902160995011598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae256dc8974f3e7%3A0xfdbdfc60e5d25fc0!2sSLIIT%20-%20Sri%20Lanka%20Institute%20of%20Information%20Technology!5e0!3m2!1sen!2slk!4v1586857329165!5m2!1sen!2slk"
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="form-section">
+      <h3>Send Us a Message</h3>
+      <form id="contactForm" action="https://formsubmit.co/sriwanthij@gmail.com" method="POST">
+        <input type="email" name="email" placeholder="Your Email" required><br>
+        <textarea name="message" placeholder="Message" required></textarea><br>
+        <button type="submit">Send</button>
+
+        <!-- Optional hidden inputs -->
+        <input type="hidden" name="_captcha" value="false">
+      </form>
+    </section>
+  </main>
+
+  <footer>© 2025 RESAI Research Group</footer>
+
+  <!-- JavaScript for Alert -->
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      alert("Thank you! A confirmation email has been sent to your inbox.");
+      alert("Message sent successfully!");
+    });
+  </script>
+
 </body>
 </html>
